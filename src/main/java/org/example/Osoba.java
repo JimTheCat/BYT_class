@@ -2,6 +2,7 @@ package org.example;
 
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.List;
 
 public abstract class Osoba {
     protected String imie;
@@ -14,7 +15,5 @@ public abstract class Osoba {
         this.dataUrodzenia = dataUrodzenia;
     }
 
-    public abstract void dodaj();
-    public abstract void edytuj();
-    public abstract void usun();
+    public abstract Osoba usun();
 }

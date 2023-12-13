@@ -3,37 +3,38 @@ package org.example;
 import java.time.LocalDate;
 import java.util.HashMap;
 
-public class Klient extends Osoba {
+public class Klient extends Osoba implements IKlient{
 
     protected static HashMap<String, Long> urzytkownicy;
     protected String haslo;
     protected String login;
     protected long pesel;
 
-    public Klient(String imie, String nazwisko, LocalDate dataUrodzenia, String haslo, String login, long pesel) {
+    private Klient(String imie, String nazwisko, LocalDate dataUrodzenia, String haslo, String login, long pesel) {
         super(imie, nazwisko, dataUrodzenia);
         this.haslo = haslo;
         this.login = login;
         this.pesel = pesel;
     }
 
-    public static void utworzKonto(String login, String haslo, long pesel){
-
-    }
-
 
     @Override
-    public void dodaj() {
-
+    public Klient utwórzKonto(String imie, String nazwisko, LocalDate dataUrodzenia, String haslo, String login, long pesel) {
+        return new Klient(imie, nazwisko, dataUrodzenia, haslo, login, pesel);
     }
 
     @Override
-    public void edytuj() {
-
+    public void edytuj(String imie, String nazwisko, LocalDate dataUrodzenia, String haslo, String login, long pesel) {
+        this.imie = imie;
+        this.nazwisko = nazwisko;
+        this.dataUrodzenia = dataUrodzenia;
+        this.haslo = haslo;
+        this.login = login;
+        this.pesel = pesel;
     }
 
     @Override
-    public void usun() {
-
+    public Klient usun() {
+        return null;
     }
 }
