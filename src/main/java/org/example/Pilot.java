@@ -6,16 +6,18 @@ import java.util.ArrayList;
 public class Pilot extends Osoba implements IPilot{
     protected long nrLicencjiLot;
     protected ArrayList<String> uprawnienia;
+    protected ArrayList<Lot> lotList;
 
-    private Pilot(String imie, String nazwisko, LocalDate dataUrodzenia, long nrLicencjiLot, ArrayList<String> uprawnienia) {
+    private Pilot(String imie, String nazwisko, LocalDate dataUrodzenia, long nrLicencjiLot, ArrayList<String> uprawnienia, ArrayList<Lot> lotList) {
         super(imie, nazwisko, dataUrodzenia);
         this.nrLicencjiLot = nrLicencjiLot;
         this.uprawnienia = uprawnienia;
+        this.lotList = lotList;
     }
 
     @Override
-    public Pilot dodaj(String imie, String nazwisko, LocalDate dataUrodzenia, long nrLicencjiLot, ArrayList<String> uprawnienia) {
-        return new Pilot(imie, nazwisko, dataUrodzenia, nrLicencjiLot, uprawnienia);
+    public Pilot dodaj(String imie, String nazwisko, LocalDate dataUrodzenia, long nrLicencjiLot, ArrayList<String> uprawnienia, ArrayList<Lot> lotList) {
+        return new Pilot(imie, nazwisko, dataUrodzenia, nrLicencjiLot, uprawnienia, lotList);
     }
 
     @Override
