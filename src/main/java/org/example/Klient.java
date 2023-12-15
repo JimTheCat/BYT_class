@@ -1,20 +1,23 @@
 package org.example;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Klient extends Osoba implements IKlient{
 
-    protected static HashMap<String, Long> urzytkownicy;
+    protected static HashMap<String, Long> uzytkownicy;
     protected String haslo;
     protected String login;
     protected long pesel;
+    protected ArrayList<Rezerwacja> listaRezerwacji;
 
     private Klient(String imie, String nazwisko, LocalDate dataUrodzenia, String haslo, String login, long pesel) {
         super(imie, nazwisko, dataUrodzenia);
         this.haslo = haslo;
         this.login = login;
         this.pesel = pesel;
+        listaRezerwacji = new ArrayList<>();
     }
 
 
